@@ -4,10 +4,6 @@
  * @namespace Egg
  */
 
-/**
- * Start egg application with cluster mode
- * @since 1.0.0
- */
 exports.startCluster = require('egg-cluster').startCluster;
 
 /**
@@ -22,38 +18,14 @@ exports.Application = require('./lib/application');
  */
 exports.Agent = require('./lib/agent');
 
-/**
- * @member {AppWorkerLoader} Egg#AppWorkerLoader
- * @since 1.0.0
- */
-exports.AppWorkerLoader = require('./lib/loader').AppWorkerLoader;
 
-/**
- * @member {AgentWorkerLoader} Egg#AgentWorkerLoader
- * @since 1.0.0
- */
+exports.AppWorkerLoader = require('./lib/loader').AppWorkerLoader;
 exports.AgentWorkerLoader = require('./lib/loader').AgentWorkerLoader;
 
 /**
- * @member {Controller} Egg#Controller
- * @since 1.1.0
+ * 4个都是基础基类???
  */
 exports.Controller = require('./lib/core/base_context_class');
-
-/**
- * @member {Service} Egg#Service
- * @since 1.1.0
- */
 exports.Service = require('./lib/core/base_context_class');
-
-/**
- * @member {Subscription} Egg#Subscription
- * @since 1.10.0
- */
 exports.Subscription = require('./lib/core/base_context_class');
-
-/**
- * @member {BaseContextClass} Egg#BaseContextClass
- * @since 1.2.0
- */
 exports.BaseContextClass = require('./lib/core/base_context_class');
