@@ -4,28 +4,21 @@
  * @namespace Egg
  */
 
+//脚本就是调用了这个
 exports.startCluster = require('egg-cluster').startCluster;
 
-/**
- * @member {Application} Egg#Application
- * @since 1.0.0
- */
-exports.Application = require('./lib/application');
+exports.Application = require('./application');
+
+exports.Agent = require('./agent');
+
+exports.AppWorkerLoader = require('./loader').AppWorkerLoader;
+exports.AgentWorkerLoader = require('./loader').AgentWorkerLoader;
 
 /**
- * @member {Agent} Egg#Agent
- * @since 1.0.0
+ * 4个都是基础基类
+ * 继承 require('egg-core').BaseContextClass
  */
-exports.Agent = require('./lib/agent');
-
-
-exports.AppWorkerLoader = require('./lib/loader').AppWorkerLoader;
-exports.AgentWorkerLoader = require('./lib/loader').AgentWorkerLoader;
-
-/**
- * 4个都是基础基类???
- */
-exports.Controller = require('./lib/core/base_context_class');
-exports.Service = require('./lib/core/base_context_class');
-exports.Subscription = require('./lib/core/base_context_class');
-exports.BaseContextClass = require('./lib/core/base_context_class');
+exports.Controller = require('./core/base_context_class');
+exports.Service = require('./core/base_context_class');
+exports.Subscription = require('./core/base_context_class');
+exports.BaseContextClass = require('./core/base_context_class');
